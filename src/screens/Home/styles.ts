@@ -1,17 +1,7 @@
 import { StyleSheet } from "react-native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
-export const theme = {
-  colors: {
-    primary: "#1E6F9F",
-    secondary: "#0D0D0D",
-    background: "#1A1A1A",
-  },
-  border: {
-    radius: 8,
-    width: 1,
-  },
-};
+import theme from "../../globals/styles/theme";
 
 export const styles = StyleSheet.create({
   container: {
@@ -24,7 +14,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
 
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.background1,
 
     width: "100%",
     height: 173,
@@ -34,19 +24,18 @@ export const styles = StyleSheet.create({
     width: "100%",
 
     flex: 1,
-    flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "center",
+    // flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    paddingHorizontal: 24,
 
-    backgroundColor: theme.colors.background,
+    backgroundColor: theme.colors.background2,
   },
   formWrapper: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
 
-    paddingHorizontal: 24,
     marginTop: RFPercentage(-4),
   },
   input: {
@@ -61,17 +50,69 @@ export const styles = StyleSheet.create({
     padding: 16,
     marginRight: 4,
 
-    fontFamily: "Inter_400Regular",
+    fontFamily: theme.fonts.regular,
     fontSize: 16,
+    color: theme.colors.gray[100],
   },
   buttonAdd: {
     width: 54,
     height: 54,
 
-    backgroundColor: theme.colors.primary,
+    backgroundColor: theme.colors.primaryDark,
     borderRadius: theme.border.radius,
 
     alignItems: "center",
     justifyContent: "center",
+  },
+  todoListHeader: {
+    width: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+
+    height: 40,
+    marginTop: 32,
+  },
+  todoListContent: {
+    width: "100%",
+  },
+  contentSeparator: {
+    borderBottomColor: theme.colors.gray[400],
+    borderBottomWidth: theme.border.width,
+
+    marginTop: 20,
+  },
+  todoListEmptyWrapper: {
+    width: "100%",
+    alignItems: "center",
+
+    borderTopColor: theme.colors.gray[400],
+    borderTopWidth: theme.border.width,
+    marginTop: 20,
+
+    paddingHorizontal: 20,
+    paddingVertical: 48,
+  },
+  todoListEmpty1: {
+    width: "100%",
+
+    fontFamily: theme.fonts.bold,
+    color: theme.colors.gray[300],
+    textAlign: "center",
+
+    marginTop: 16,
+  },
+  todoListEmpty2: {
+    width: "100%",
+    fontFamily: theme.fonts.regular,
+    color: theme.colors.gray[300],
+    textAlign: "center",
+  },
+  todoListWrapper: {
+    width: "100%",
+    marginTop: 20,
+
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
 });
